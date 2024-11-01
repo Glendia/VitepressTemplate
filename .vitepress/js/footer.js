@@ -1,5 +1,5 @@
 export const footer = {
-    message:
-      '备案号:<a href="https://beian.miit.gov.cn/">沪ICP备2023012559号</a>',
-    copyright: 'Copyright © 2022-2024 <a href="/">LinCDN</a> All Rights Reserved.',
-  };
+  message: "基于 MIT 许可发布",
+  copyright:
+    'Copyright © 2022-2024 <a href="/">Glendia</a> All Rights Reserved.',
+};

@@ -2,14 +2,18 @@ import { defineConfig } from "vitepress"; //导入管理器
 //导入外部JS 文件
 //import { algolia } from "./js/algolia.js"; //搜索
 //import {carbonAds} from './js/carbonAds.js';//广告
+import { editLink } from "./js/editLink.js"; //编辑链接
 import { footer } from "./js/footer.js"; //页脚
 import { head } from "./js/head.js"; //页头
+import { lastUpdated } from "./js/lastUpdated.js";
+import { logo } from "./js/logo.js";
 import { nav } from "./js/nav.js"; //导航栏
+import { outline } from "./js/outline.js";
+import { search } from "./js/search.js";
 import { sidebar } from "./js/sidebar.js"; //侧边栏
 import { socialLinks } from "./js/socialLinks.js"; //社交链接
 //import { markdown } from "./js/markdown.js"; //markdown配置
-//import { sitemap } from "./js/sitemap.js"; //站点地图
-import { editLink } from "./js/editLink.js"; //编辑链接
+import { sitemap } from "./js/sitemap.js"; //站点地图
 
 export default defineConfig({
   base: "/", //项目地址
@@ -29,26 +33,22 @@ export default defineConfig({
   metaChunk: true,//当设置为 true 时，将页面元数据提取到单独的 JavaScript 块中，而不是内联在初始 HTML 中。这使每个页面的 HTML 负载更小，并使页面元数据可缓存，从而当站点中有很多页面时可以减少服务器带宽。
   mpa: false,//设置为 true 时，生产应用程序将在 MPA 模式下构建。MPA 模式默认提供 零 JavaScript 支持，代价是禁用客户端导航，并且需要明确选择加入才能进行交互。
   appearance: true,//主题
-  lastUpdated: true,//最后更新时间
-  sitemap: {
-    hostname: "https://www.dekit.org",
-    lastmodDateOnly: true,//最后更新时间只显示日期
-  },//站点地图
+  lastUpdated: lastUpdated,//最后更新时间
+  sitemap: sitemap,//站点地图
   //主题设置
   themeConfig: {
-    logo:{ 
-      light: "/logo.svg",
-      dark: "logo-dark.svg",
-      alt: "DeKit"},//logo
+    logo:logo,//logo
     siteTitle: false,//站点标题
-    nav:nav,
-    sidebar:sidebar,
-    outline:{
-      label: "大纲",
-      level: ['deep'],
-    },
-    editLink:editLink,
-    socialLinks:socialLinks,
-    footer:footer,
+    nav:nav,//导航栏
+    sidebar:sidebar,//左侧边栏
+    outline:outline,//右侧边目录
+    editLink:editLink,//编辑链接
+    socialLinks:socialLinks,//社交链接
+    footer:footer,//页脚
+    search:search,//搜索
   },
+  docFooter:{
+    prev: '上一篇',
+    next: '下一篇'
+  }
 });
