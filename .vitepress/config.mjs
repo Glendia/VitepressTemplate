@@ -23,7 +23,7 @@ export default defineConfig({
   description: "A VitePress Site", //项目描述
   head: head,//头部信息
   cleanUrls: false,//去掉url中的.html
-  rewrites: {"/": "/index.html",},//重定向
+  rewrites: { "/": "/index.html", },//重定向
   srcDir: ".",//源文件目录
   srcExclude: ["README.md"],//排除文件
   outDir: "./.vitepress/dist",//输出目录
@@ -37,18 +37,26 @@ export default defineConfig({
   sitemap: sitemap,//站点地图
   //主题设置
   themeConfig: {
-    logo:logo,//logo
+    logo: logo,//logo
     siteTitle: false,//站点标题
-    nav:nav,//导航栏
-    sidebar:sidebar,//左侧边栏
-    outline:outline,//右侧边目录
-    editLink:editLink,//编辑链接
-    socialLinks:socialLinks,//社交链接
-    footer:footer,//页脚
-    search:search,//搜索
+    nav: nav,//导航栏
+    sidebar: sidebar,//左侧边栏
+    outline: outline,//右侧边目录
+    editLink: editLink,//编辑链接
+    socialLinks: socialLinks,//社交链接
+    footer: footer,//页脚
+    search: search,//搜索
   },
-  docFooter:{
+  docFooter: {
     prev: '上一篇',
     next: '下一篇'
-  }
-});
+  },//文档页脚
+  darkModeSwitchLabel: '深色模式',
+  lightModeSwitchLabel: '浅色模式',
+  darkModeSwitchTitle: '深色模式',
+  sidebarMenuLabel: '菜单',
+  returnToTopLabel: '返回顶部',
+  langMenuLabel: '语言',
+  externalLinkIcon: true,//外部链接图标
+},
+);
